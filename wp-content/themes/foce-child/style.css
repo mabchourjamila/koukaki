@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
@@ -7,3 +8,70 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+body div {
+  background-color: #FFF5E9;
+}
+
+/* style pour ajouter la video & fade up+down*/
+.banner {
+  background-image: none !important;
+  min-height: 806px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Ajoutez position relative pour le positionnement absolu de la vidéo */
+}
+.banner .video {
+  position: absolute;
+  /* Positionnement absolu pour la vidéo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Largeur de la vidéo pour remplir la largeur de la div */
+  height: 100%;
+  /* Hauteur de la vidéo pour remplir la hauteur de la div */
+  object-fit: cover;
+  /* Ajuster la taille de la vidéo pour couvrir la div */
+}
+.banner .logo {
+  z-index: 1;
+}
+.banner .video {
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slidefromtop 2s forwards;
+}
+.banner .logo {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  animation: slideup 2s 1s forwards;
+}
+
+@keyframes slidefromtop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideup {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

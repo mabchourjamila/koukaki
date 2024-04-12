@@ -2,10 +2,13 @@
 
 get_header();
 ?>
-
     <main id="primary" class="site-main">
         <section class="banner">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <video class="video" autoplay muted loop>
+                <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/StudioKoukaki-videoheadersansson.mp4'; ?>" type="video/mp4">
+                Votre navigateur ne prend pas en charge les vidéos HTML5.
+            </video>
+            <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
         <section id="#story" class="story">
             <h2>L'histoire</h2>
