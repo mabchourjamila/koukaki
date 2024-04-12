@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuContent = document.querySelector('.menu-content');
+    const siteNavigation = document.querySelector('.main-navigation ');
+
+    menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('active');
+        menuContent.classList.toggle('open');
+        siteNavigation.classList.remove( 'toggled' );
+    });
+});
+
+
+
 document.addEventListener('readystatechange', function (event) {
 
     console.log("le script js est lancé 2 !");

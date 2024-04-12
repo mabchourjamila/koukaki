@@ -99,4 +99,84 @@ body div {
   width: auto;
 }
 
+/* Animations fleurs */
+.story h2::after,
+.story__article::after,
+#studio h2::before {
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.story h2::before {
+  z-index: auto;
+}
+.story__article::before {
+  z-index: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-header .main-navigation {
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+.site-header .main-navigation .line {
+  height: 2px;
+  margin-block: 6px;
+  width: 40px;
+}
+.site-header .menu-toggle {
+  display: block;
+  margin-left: auto;
+}
+.site-header .menu-toggle :hover {
+  cursor: pointer;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.menu-content.open {
+  display: block;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Styles pour transformer le burger en croix */
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /*# sourceMappingURL=style.css.map */

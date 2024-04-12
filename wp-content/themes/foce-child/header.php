@@ -25,20 +25,33 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<nav id="site-navigation" class="main-navigation">
+<header id="masthead" class="site-header">
+    <nav id="site-navigation" class="main-navigation">
+            <ul>            
+                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+            </ul>
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            <ul>
-                <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
-            </ul>
+    </nav><!-- #site-navigation -->
+    <nav id="site-navigation-sections" class="menu-content">
+            <div class="menu-header">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/small-logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+            </div>
+            <div class="menu-nav">
+                <ul>
+                    <li><a href="#story">Histoire</a></li>
+                    <li><a href="#characters">Personnages</a></li>
+                    <li><a href="#place">Lieu</a></li>
+                    <li><a href="#studio">Studio Koukaki</a></li>
+                </ul>
+            </div>
+            <div class="menu-footer">
+                <a href="#">STUDIO KOUKAKI</a>
+            </div>
+    </nav><!-- #site-navigation -->
+</header><!-- #masthead -->
 
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+
