@@ -17,26 +17,42 @@
     .menu-toggle {
         display: block;
         margin-left: auto;
+
         :hover {
             cursor: pointer;
         }
     }
+
+    /* Styles pour transformer le burger en croix */
+    .menu-toggle.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu-content.open {
+        display: block;
+        animation: fade-in 0.6s ease;
+        background-color: #FFF5E9;
+    }
+
 }
 
-.menu-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
-}
-
-.menu-content.open {
-    display: block;
-    animation: fade-in 0.3s ease;
-}
 
 @keyframes fade-in {
     from {
@@ -48,15 +64,57 @@
     }
 }
 
-/* Styles pour transformer le burger en croix */
-.menu-toggle.active .line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
 
-.menu-toggle.active .line:nth-child(2) {
-    opacity: 0;
-}
 
-.menu-toggle.active .line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+/* Styles pour centrer le contenu dans la nav */
+.menu-content {
+    text-align: center;
+
+    max-height: 600px;
+    /* Définissez la hauteur maximale pour afficher la barre de défilement */
+    overflow-y: auto;
+    /* Afficher la barre de défilement verticale si nécessaire */
+
+
+    .menu-header {
+        img {
+            margin-top: 20px;
+            height: 110px;
+        }
+    }
+
+    .menu-nav {
+        ul {
+            list-style-type: none;
+            /* Supprime les puces de liste */
+            padding: 0;
+            margin: 0;
+
+            li {
+                font-family: Roboto Mono;
+                font-size: 42px;
+                font-weight: 400;
+                line-height: 85px;
+                text-align: center;
+                margin: 20px;
+
+                a {
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    text-shadow: 0px 0px 5px #FF5C00;
+
+                }
+            }
+
+        }
+    }
+
+
+    .menu-footer {
+        padding: 50px 0 20px;
+    }
+
+
 }

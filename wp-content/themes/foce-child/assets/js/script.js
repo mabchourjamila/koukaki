@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $('.menu-burger').hide();
 
     // Gérer le clic sur le bouton de menu
-    $('.menu-toggle').click(function() {
+    $('.menu-toggle').click(function () {
         $('.menu-burger').slideDown("slow");
     });
 
@@ -14,27 +14,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menuContent = document.querySelector('.menu-content');
     const siteNavigation = document.querySelector('.main-navigation ');
 
-    menuToggle.addEventListener('click', function() {
+    /* 
+       ajouter l'evenement de clic sur le bouton open / close du menu burger
+    */
+    menuToggle.addEventListener('click', function () {
         menuToggle.classList.toggle('active');
         menuContent.classList.toggle('open');
-        siteNavigation.classList.remove( 'toggled' );
+        siteNavigation.classList.remove('toggled');
     });
+
+    /* 
+        ajuster l'affichage du menu à l'ecran en ajoutant un scroll au menu
+    */
+    function adjustMenuHeight() {
+        const windowHeight = window.innerHeight;
+        menuContent.style.maxHeight = (windowHeight - menuContent.offsetTop) + 'px';
+    }
+
+    // Appeler la fonction une fois au chargement de la page
+    adjustMenuHeight();
+
+    // Appeler la fonction à chaque redimensionnement de la fenêtre
+    window.addEventListener('resize', adjustMenuHeight);
 });
-
-
 
 document.addEventListener('readystatechange', function (event) {
 
     console.log("le script js est lancé 2 !");
     if (document.readyState === "complete") {
-    // Initialize Swiper
+        // Initialize Swiper
         initSwiperJS()
-    // Initialize Skrollr
+        // Initialize Skrollr
         initScroll()
     }
 });
