@@ -1,0 +1,26 @@
+/* SwiperJS */
+
+#characters {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.story #characters div {
+    flex: none;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper figure {
+    max-height: 460px;
+}
+
+.swiper figure img {
+    max-height: 400px;
+    width: auto;
+}
