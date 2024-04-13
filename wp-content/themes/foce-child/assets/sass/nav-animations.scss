@@ -1,0 +1,80 @@
+.menu-header:before {
+    content: url(./assets/images/orchid.png);
+    position: absolute;
+    left: -4em;
+    top: 4em;
+}
+
+.menu-nav {
+    ul {
+        li:nth-child(1) {
+            :before {
+                content: url(./assets/images/cat1.png);
+                position: absolute;
+                left: 7em;
+                top: 3em;
+            }
+
+            :after {
+                content: url(./assets/images/Sunflower.png);
+                position: absolute;
+                right: 5em;
+                top: 2em;
+            }
+        }
+
+        li:nth-child(2) {
+            :after {
+                content: "";
+                background-image: url(./assets/images/random_flower.png);
+                position: absolute;
+                right: -0.7em;
+                top: 5em;
+                background-size: cover;
+                width: 75px;
+                height: 75px;
+            }
+        }
+
+        li:nth-child(3) {
+            :before {
+                content: "";
+                background-image: url(./assets/images/flower.png);
+                position: absolute;
+                left: 6em;
+                top: 8em;
+                background-size: cover;
+                width: 75px;
+                height: 75px;
+            }
+
+            :after {
+                content: url(./assets/images/cat3.png);
+                position: absolute;
+                right: 5em;
+                top: 8em;
+            }
+        }
+
+
+        li:nth-child(4) {
+            :before {
+                content: url(./assets/images/cat2.png);
+                position: absolute;
+                left: 2em;
+                top: 13em;
+            }
+
+            :after {
+                content: "";
+                background-image: url(./assets/images/Hibiscus.png);
+                position: absolute;
+                right: -5em;
+                top: 15em;
+                background-size: cover;
+                width: 400px;
+                height: 400px;
+            }
+        }
+    }
+}

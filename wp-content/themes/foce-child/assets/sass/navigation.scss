@@ -7,6 +7,10 @@
         display: grid;
         grid-template-columns: 90% 10%;
 
+        .site-title {
+            padding-left: 12%;
+        }
+
         .line {
             height: 2px;
             margin-block: 6px;
