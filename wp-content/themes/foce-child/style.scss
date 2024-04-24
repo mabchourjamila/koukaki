@@ -8,16 +8,13 @@
  Version: 0.1
  */
 
-body {
-    div {
-
-        background-color: #FFF5E9;
-    }
-}
-
 
 @import 'assets/sass/banner.scss';
 @import 'assets/sass/personnages.scss';
 @import 'assets/sass/story.scss';
 @import 'assets/sass/navigation.scss';
+@import 'assets/sass/animations.scss';
 @import 'assets/sass/nav-animations.scss';
+@import 'assets/sass/place.scss';
+@import 'assets/sass/cloud.scss';
+@import 'assets/sass/nomination.scss';

@@ -1,0 +1,49 @@
+.nomination {
+    position: relative;
+    padding: 150px 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 0;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        background-image: url(./assets/images/orange-bg.png);
+        font-size: 35px;
+        padding: 50px;
+        max-width: 653px;
+        text-align: left;
+        color: #FFF5E9;
+
+    }
+
+    img {
+        margin: -35px;
+    }
+
+    &:before {
+        content: url(./assets/images/Sunflower.png);
+        position: absolute;
+        left: 10em;
+        top: 4em;
+    }
+
+    &:after {
+        content: url(./assets/images/orchid.png);
+        position: absolute;
+        right: -4em;
+        top: -3em;
+    }
+
+
+}
+
+.site-footer {
+    &:before {
+        content: '' !important;
+    }
+
+    &:after {
+        content: '' !important;
+    }
+}

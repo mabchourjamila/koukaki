@@ -1,0 +1,59 @@
+/* Animations fleurs */
+
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.nomination::before,
+.nomination::after,
+.site-footer ul::after,
+.menu-header::before {
+    animation: rotation 13s infinite linear;
+}
+
+.menu-nav ul {
+
+    li:nth-child(1),
+    li:nth-child(2),
+    li:nth-child(4) {
+        :after {
+            animation: rotation 13s infinite linear;
+        }
+    }
+
+    li:nth-child(3) {
+        :before {
+            animation: rotation 13s infinite linear;
+        }
+    }
+}
+
+/* Pour la rotation des fleurs */
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+/* Pour l'animatin des titres */
+
+.animation-title-visible {
+    animation: animation-title 3s 1s forwards;
+}
+
+@keyframes animation-title {
+    0% {
+        transform: translate3d(-50%, 50%, 0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(-50%, -50%, 0);
+        opacity: 1;
+    }
+}

@@ -98,8 +98,38 @@ function handleCloudAnimation() {
 }
 
 function initScroll() {
-    cloud_container = document.getElementById('cloud-container')
+    cloud_container = document.getElementById('place')
     window.addEventListener('scroll', handleCloudAnimation);
     window.addEventListener('resize', handleCloudAnimation);
     handleCloudAnimation();
 }
+
+
+
+/* Pour l'animatin des titres */
+
+// Options pour l'observateur d'intersection
+const options = {
+    root: null, // Utilisez la fenêtre comme conteneur par défaut
+    rootMargin: '0px', // Pas de marge autour de la fenêtre visible
+    threshold: 0.5 // Lorsque 50% de la section est visible
+};
+
+// Créer un observateur d'intersection
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const title = entry.target.querySelector('.animation-title');
+            title.classList.add('animation-title-visible'); // Ajoute la classe "animation-title-visible" lorsque la section est visible
+            observer.unobserve(entry.target); // Arrête d'observer cette section une fois qu'elle est animée
+        }
+    });
+}, options);
+
+// Sélectionnez toutes les sections à observer
+const sections = document.querySelectorAll('.animated-section');
+
+// Observer chaque section
+sections.forEach(section => {
+    observer.observe(section);
+});

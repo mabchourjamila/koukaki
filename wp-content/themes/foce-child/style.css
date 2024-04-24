@@ -8,10 +8,6 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-body div {
-  background-color: #FFF5E9;
-}
-
 /* style pour ajouter la video & fade up+down*/
 .banner {
   background-image: none !important;
@@ -99,21 +95,6 @@ body div {
   width: auto;
 }
 
-/* Animations fleurs */
-.story h2::after,
-.story__article::after,
-#studio h2::before {
-  animation: rotation 10s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
 .story h2::before {
   z-index: auto;
 }
@@ -212,6 +193,51 @@ body div {
   padding: 50px 0 20px;
 }
 
+/* Animations fleurs */
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.nomination::before,
+.nomination::after,
+.site-footer ul::after,
+.menu-header::before {
+  animation: rotation 13s infinite linear;
+}
+
+.menu-nav ul li:nth-child(1) :after,
+.menu-nav ul li:nth-child(2) :after,
+.menu-nav ul li:nth-child(4) :after {
+  animation: rotation 13s infinite linear;
+}
+.menu-nav ul li:nth-child(3) :before {
+  animation: rotation 13s infinite linear;
+}
+
+/* Pour la rotation des fleurs */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/* Pour l'animatin des titres */
+.animation-title-visible {
+  animation: animation-title 3s 1s forwards;
+}
+
+@keyframes animation-title {
+  0% {
+    transform: translate3d(-50%, 50%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 1;
+  }
+}
 .menu-header:before {
   content: url(./assets/images/orchid.png);
   position: absolute;
@@ -224,12 +250,23 @@ body div {
   position: absolute;
   left: 7em;
   top: 3em;
+  animation: flotter 6s 100ms infinite ease-in-out;
+}
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(1) :before {
+    content: "";
+  }
 }
 .menu-nav ul li:nth-child(1) :after {
   content: url(./assets/images/Sunflower.png);
   position: absolute;
   right: 5em;
   top: 2em;
+}
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(1) :after {
+    content: "";
+  }
 }
 .menu-nav ul li:nth-child(2) :after {
   content: "";
@@ -241,6 +278,12 @@ body div {
   width: 75px;
   height: 75px;
 }
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(2) :after {
+    width: 50px;
+    height: 50px;
+  }
+}
 .menu-nav ul li:nth-child(3) :before {
   content: "";
   background-image: url(./assets/images/flower.png);
@@ -251,27 +294,125 @@ body div {
   width: 75px;
   height: 75px;
 }
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(3) :before {
+    background-image: none;
+  }
+}
 .menu-nav ul li:nth-child(3) :after {
   content: url(./assets/images/cat3.png);
   position: absolute;
   right: 5em;
   top: 8em;
+  animation: flotter 7.5s 150ms infinite ease-in-out;
+}
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(3) :after {
+    content: "";
+  }
 }
 .menu-nav ul li:nth-child(4) :before {
   content: url(./assets/images/cat2.png);
   position: absolute;
   left: 2em;
   top: 13em;
+  animation: flotter 7s 200ms infinite ease-in-out;
+}
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(4) :before {
+    content: "";
+  }
 }
 .menu-nav ul li:nth-child(4) :after {
   content: "";
   background-image: url(./assets/images/Hibiscus.png);
   position: absolute;
   right: -5em;
-  top: 15em;
+  top: 11em;
   background-size: cover;
   width: 400px;
   height: 400px;
+}
+@media all and (max-width: 700px) {
+  .menu-nav ul li:nth-child(4) :after {
+    right: -2.5em;
+    top: 13em;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Pour flotter les chats */
+@keyframes flotter {
+  0%, 100% {
+    transform: translate3d(5px, 5px, 0);
+  }
+  10%, 30%, 55%, 85% {
+    transform: translate3d(0, 5px, 0);
+  }
+  20% {
+    transform: translate3d(5px, -4px, 0);
+  }
+  40% {
+    transform: translate3d(-5px, -5px, 0);
+  }
+  70% {
+    transform: translate3d(-6px, 5px, 0);
+  }
+}
+.story #place {
+  position: relative;
+  background-image: url(./assets/images/image-place.png);
+}
+.story .cloud {
+  position: absolute;
+  filter: blur(10px);
+}
+.story #big-cloud {
+  margin-top: 80px;
+}
+.story #little-cloud {
+  margin-top: 275px;
+}
+
+.nomination {
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+.nomination h3 {
+  background-image: url(./assets/images/orange-bg.png);
+  font-size: 35px;
+  padding: 50px;
+  max-width: 653px;
+  text-align: left;
+  color: #FFF5E9;
+}
+.nomination img {
+  margin: -35px;
+}
+.nomination:before {
+  content: url(./assets/images/Sunflower.png);
+  position: absolute;
+  left: 10em;
+  top: 4em;
+}
+.nomination:after {
+  content: url(./assets/images/orchid.png);
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer:before {
+  content: "" !important;
+}
+.site-footer:after {
+  content: "" !important;
 }
 
 /*# sourceMappingURL=style.css.map */

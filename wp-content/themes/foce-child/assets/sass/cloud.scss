@@ -1,0 +1,19 @@
+.story {
+    #place {
+        position:relative;
+        background-image: url(./assets/images/image-place.png);
+      }
+      .cloud {
+        position: absolute;
+        filter: blur(10px);
+      }
+      #big-cloud{
+        margin-top: 80px;
+      }
+
+      #little-cloud{
+        margin-top: 275px;
+      }
+      
+}
+
