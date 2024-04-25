@@ -42,10 +42,10 @@
             </div>
             <div class="menu-nav">
                 <ul>
-                    <li><a href="#story">Histoire</a></li>
-                    <li><a href="#characters">Personnages</a></li>
-                    <li><a href="#place">Lieu</a></li>
-                    <li><a href="#studio">Studio Koukaki</a></li>
+                    <li class="menu-nav-item"><a href="#story">Histoire</a></li>
+                    <li class="menu-nav-item"><a href="#characters">Personnages</a></li>
+                    <li class="menu-nav-item"><a href="#place">Lieu</a></li>
+                    <li class="menu-nav-item"><a href="#studio">Studio Koukaki</a></li>
                 </ul>
             </div>
             <div class="menu-footer">

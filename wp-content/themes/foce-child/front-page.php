@@ -10,7 +10,7 @@ get_header();
         </video>
         <img class="logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
     </section>
-    <section id="#story" class="story">
+    <section id="story" class="story">
         <h2 class="animated-section"><span class="animation-title">L'histoire</span></h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
@@ -76,11 +76,7 @@ get_header();
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
         </div>
     </section>
-
-  <section id="nomination" class="nomination animated-section">
-      <h3><span class="animation-title">Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</span></h3>
-      <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo-oscars-2022.png'; ?>" alt="Nomination aux Oscars Short Film 2022">
-  </section>
+    <?php get_template_part( 'template-parts/nomination-festival' ); ?>
 
 </main><!-- #main -->
 

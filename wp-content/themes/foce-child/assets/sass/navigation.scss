@@ -7,6 +7,10 @@
         display: grid;
         grid-template-columns: 90% 10%;
 
+        @media all and (max-width: 700px) {
+            display: block;
+        }
+
         .site-title {
             padding-left: 12%;
         }
@@ -21,6 +25,10 @@
     .menu-toggle {
         display: block;
         margin-left: auto;
+
+        @media all and (max-width: 700px) {
+            float: right;
+        }
 
         :hover {
             cursor: pointer;

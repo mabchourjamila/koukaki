@@ -2,6 +2,10 @@
     h2{
       &::before {
         z-index: auto;
+        left: -7em;
+      }
+      &::after {
+        left: -6.2em;
       }
     }
     &__article {

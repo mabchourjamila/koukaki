@@ -43,7 +43,7 @@
 /* Pour l'animatin des titres */
 
 .animation-title-visible {
-    animation: animation-title 3s 1s forwards;
+    //animation: animation-title slideup 3s 1s forwards;
 }
 
 @keyframes animation-title {
@@ -56,4 +56,17 @@
         transform: translate3d(-50%, -50%, 0);
         opacity: 1;
     }
+}
+.animated-section,
+.story__article::before,
+.story__article::after,
+#characters,
+#place
+{
+    opacity: 0;
+    animation: slideup 2s forwards;
+}
+p{
+
+    opacity: 1 !important;
 }

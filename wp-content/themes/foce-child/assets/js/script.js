@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menuContent = document.querySelector('.menu-content');
     const siteNavigation = document.querySelector('.main-navigation ');
+    const menuNavItems = document.querySelectorAll('.menu-nav-item');
 
     /* 
        ajouter l'evenement de clic sur le bouton open / close du menu burger
@@ -26,6 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
         menuToggle.classList.toggle('active');
         menuContent.classList.toggle('open');
         siteNavigation.classList.remove('toggled');
+    });
+
+    /* 
+       ajouter l'evenement de clic sur le click des item du menu pour fermer le menu burger
+    */
+    menuNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            menuContent.classList.remove('open');
+        });
     });
 
     /* 
@@ -90,8 +101,8 @@ function elementInView(el, dividend = 1) {
 }
 
 function handleCloudAnimation() {
-    console.log(cloud_container)
-    if (elementInView(cloud_container, 1.25)) {
+    console.log(getCloudPosition(cloud_container))
+    if (elementInView(cloud_container, 1.25) && getCloudPosition(cloud_container) < 72) {
         document.getElementById('big-cloud').style.left = getCloudPosition(cloud_container) + '%'
         document.getElementById('little-cloud').style.left = getCloudPosition(cloud_container) + '%'
     }
