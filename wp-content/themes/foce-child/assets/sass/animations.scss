@@ -1,3 +1,9 @@
+$rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation par défaut
+
+:root {
+    --rotation-speed: #{$rotation-speed}; // Convertir la variable SCSS en une variable CSS personnalisée
+}
+
 /* Animations fleurs */
 
 .story h2::after,
@@ -8,7 +14,7 @@
 .nomination::after,
 .site-footer ul::after,
 .menu-header::before {
-    animation: rotation 13s infinite linear;
+    animation: rotation var(--rotation-speed) infinite linear;
 }
 
 .menu-nav ul {
@@ -58,8 +64,7 @@
     }
 }
 .animated-section,
-.story__article::before,
-.story__article::after,
+.story__article
 #characters,
 #place
 {

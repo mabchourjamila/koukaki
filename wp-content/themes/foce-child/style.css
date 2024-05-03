@@ -207,6 +207,10 @@
   padding: 50px 0 20px;
 }
 
+:root {
+  --rotation-speed: 12s;
+}
+
 /* Animations fleurs */
 .story h2::after,
 .story__article::after,
@@ -216,7 +220,7 @@
 .nomination::after,
 .site-footer ul::after,
 .menu-header::before {
-  animation: rotation 13s infinite linear;
+  animation: rotation var(--rotation-speed) infinite linear;
 }
 
 .menu-nav ul li:nth-child(1) :after,
@@ -249,9 +253,7 @@
   }
 }
 .animated-section,
-.story__article::before,
-.story__article::after,
-#characters,
+.story__article #characters,
 #place {
   opacity: 0;
   animation: slideup 2s forwards;

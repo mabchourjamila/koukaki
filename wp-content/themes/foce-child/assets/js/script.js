@@ -10,9 +10,18 @@ document.addEventListener("DOMContentLoaded", function () {
         $('.menu-burger').slideDown("slow");
     });
 
+    $(window).scroll(function() {
+        var scrollPosition = $(window).scrollTop();
+
+        // Ajuster la vitesse de rotation en fonction de la position de défilement
+        var rotationSpeed = scrollPosition * 0.01; // Vous pouvez ajuster le coefficient selon vos besoins
+
+        console.log(scrollPosition, rotationSpeed);
+        // Appliquer la nouvelle durée de l'animation
+        $(':root').css('--rotation-speed', rotationSpeed + 's reverse');
+    });
 
 });
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -101,7 +110,6 @@ function elementInView(el, dividend = 1) {
 }
 
 function handleCloudAnimation() {
-    console.log(getCloudPosition(cloud_container))
     if (elementInView(cloud_container, 1.25) && getCloudPosition(cloud_container) < 72) {
         document.getElementById('big-cloud').style.left = getCloudPosition(cloud_container) + '%'
         document.getElementById('little-cloud').style.left = getCloudPosition(cloud_container) + '%'
