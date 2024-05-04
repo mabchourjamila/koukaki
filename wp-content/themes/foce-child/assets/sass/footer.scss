@@ -13,6 +13,10 @@
     .site-footer {
         ul {
             flex-direction: column;
+            &:after {
+                animation: small-scale-rotation var(--rotation-speed) infinite linear !important;
+                bottom: -23.5em !important;
+            }
 
             li {
                 padding-bottom: 10px;

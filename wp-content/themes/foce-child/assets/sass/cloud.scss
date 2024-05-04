@@ -1,19 +1,45 @@
 .story {
-    #place {
-        position:relative;
-        background-image: url(./assets/images/image-place.png);
-      }
-      .cloud {
-        position: absolute;
-        filter: blur(10px);
-      }
-      #big-cloud{
-        margin-top: 80px;
-      }
+  #place {
+    position: relative;
+    background-image: url(./assets/images/image-place.png);
 
-      #little-cloud{
-        margin-top: 275px;
+    @media all and (max-width: 400px) {
+      div {
+        margin-top: 15em;
+        width: 90%;
+
+        p {
+          padding-left: 2em;
+        }
       }
-      
+    }
+
+  }
+
+  .cloud {
+    position: absolute;
+    filter: blur(10px);
+
+    @media all and (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  #big-cloud {
+    margin-top: 80px;
+
+    @media all and (max-width: 700px) {
+      margin-top: 60px;
+    }
+  }
+
+  #little-cloud {
+    margin-top: 275px;
+
+    @media all and (max-width: 700px) {
+      margin-top: 175px;
+    }
+  }
+
 }
 

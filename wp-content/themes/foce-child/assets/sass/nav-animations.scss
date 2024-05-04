@@ -4,7 +4,7 @@
     left: -4.5em;
     top: 3em;
 
-    @media all and (max-width: 700px) {
+    @media all and (max-width: 1011px) {
         content: '';
     }
 }
@@ -19,7 +19,7 @@
                 top: 2em;
                 animation: flotter 6s 100ms infinite ease-in-out;
 
-                @media all and (max-width: 700px) {
+                @media all and (max-width: 1011px) {
                     content: '';
                 }
             }
@@ -30,7 +30,7 @@
                 right: 5em;
                 top: 1.5em;
 
-                @media all and (max-width: 700px) {
+                @media all and (max-width: 1011px) {
                     content: '';
                 }
             }
@@ -47,7 +47,7 @@
                 width: 75px;
                 height: 75px;
 
-                @media all and (max-width: 700px) {
+                @media all and (max-width: 1011px) {
                     background-image: none;
                 }
             }
@@ -64,7 +64,7 @@
                 width: 75px;
                 height: 75px;
 
-                @media all and (max-width: 700px) {
+                @media all and (max-width: 1011px) {
                     background-image: none;
                 }
             }
@@ -76,7 +76,7 @@
                 top: 7em;
                 animation: flotter 7.5s 150ms infinite ease-in-out;
 
-                @media all and (max-width: 700px) {
+                @media all and (max-width: 1011px) {
                     content: '';
                 }
             }
@@ -91,7 +91,7 @@
                 top: 10.5em;
                 animation: flotter 7s 200ms infinite ease-in-out;
 
-                @media all and (max-width: 700px) {
+                @media all and (max-width: 1011px) {
                     content: '';
                 }
             }
@@ -103,8 +103,8 @@
                 top: 12em;
                 line-height: 0;
 
-                @media all and (max-width: 700px) {
-                    background-image: none;
+                @media all and (max-width: 1011px) {
+                    content: '';
                 }
             }
         }

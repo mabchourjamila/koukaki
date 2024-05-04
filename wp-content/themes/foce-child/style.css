@@ -18,6 +18,11 @@
   position: relative; /* Ajouter position relative pour le positionnement absolu de la vidéo */
   overflow: hidden;
 }
+@media all and (max-width: 900px) {
+  .banner {
+    min-height: 406px;
+  }
+}
 .banner .video {
   position: absolute; /* Positionnement absolu pour la vidéo */
   top: 0;
@@ -66,6 +71,11 @@
   width: 100%;
   box-sizing: border-box;
 }
+@media all and (max-width: 500px) {
+  #characters h3 {
+    line-height: 1;
+  }
+}
 
 .story #characters div {
   flex: none;
@@ -74,11 +84,9 @@
 .swiper {
   width: 100%;
 }
-
 .swiper figure {
   max-height: 460px;
 }
-
 .swiper figure img {
   max-height: 400px;
   width: auto;
@@ -94,8 +102,6 @@
 }
 .story__article::before {
   z-index: auto;
-}
-.story__article::before {
   top: 12em;
 }
 .story__article::after {
@@ -212,17 +218,21 @@
 .site-footer ul::after,
 .menu-header::before {
   animation: rotation var(--rotation-speed) infinite linear;
+  line-height: 0;
 }
 
 .menu-nav ul li:nth-child(1) :after,
 .menu-nav ul li:nth-child(2) :after {
-  animation: rotation 13s infinite linear;
+  animation: rotation var(--rotation-speed) infinite linear;
+  line-height: 0;
 }
 .menu-nav ul li:nth-child(3) :before {
-  animation: rotation 13s infinite linear;
+  animation: rotation var(--rotation-speed) infinite linear;
+  line-height: 0;
 }
 .menu-nav ul li:nth-child(4) :after {
-  animation: scale-rotation 13s infinite linear;
+  animation: scale-rotation var(--rotation-speed) infinite linear;
+  line-height: 0;
 }
 
 /* Pour la rotation des fleurs */
@@ -241,6 +251,14 @@
   }
   to {
     transform: scale(2) rotate(359deg);
+  }
+}
+@keyframes small-scale-rotation {
+  from {
+    transform: scale(0.5) rotate(0deg);
+  }
+  to {
+    transform: scale(0.5) rotate(359deg);
   }
 }
 /* Animations des sections et titres */
@@ -285,7 +303,7 @@
   left: -4.5em;
   top: 3em;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-header:before {
     content: "";
   }
@@ -298,7 +316,7 @@
   top: 2em;
   animation: flotter 6s 100ms infinite ease-in-out;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(1) :before {
     content: "";
   }
@@ -309,7 +327,7 @@
   right: 5em;
   top: 1.5em;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(1) :after {
     content: "";
   }
@@ -324,7 +342,7 @@
   width: 75px;
   height: 75px;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(2) :after {
     background-image: none;
   }
@@ -339,7 +357,7 @@
   width: 75px;
   height: 75px;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(3) :before {
     background-image: none;
   }
@@ -351,7 +369,7 @@
   top: 7em;
   animation: flotter 7.5s 150ms infinite ease-in-out;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(3) :after {
     content: "";
   }
@@ -363,7 +381,7 @@
   top: 10.5em;
   animation: flotter 7s 200ms infinite ease-in-out;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(4) :before {
     content: "";
   }
@@ -375,9 +393,9 @@
   top: 12em;
   line-height: 0;
 }
-@media all and (max-width: 700px) {
+@media all and (max-width: 1011px) {
   .menu-nav ul li:nth-child(4) :after {
-    background-image: none;
+    content: "";
   }
 }
 
@@ -403,15 +421,46 @@
   position: relative;
   background-image: url(./assets/images/image-place.png);
 }
+@media all and (max-width: 400px) {
+  .story #place div {
+    margin-top: 15em;
+    width: 90%;
+  }
+  .story #place div p {
+    padding-left: 2em;
+  }
+}
 .story .cloud {
   position: absolute;
   filter: blur(10px);
 }
+@media all and (max-width: 400px) {
+  .story .cloud {
+    display: none;
+  }
+}
 .story #big-cloud {
   margin-top: 80px;
 }
+@media all and (max-width: 700px) {
+  .story #big-cloud {
+    margin-top: 60px;
+  }
+}
 .story #little-cloud {
   margin-top: 275px;
+}
+@media all and (max-width: 700px) {
+  .story #little-cloud {
+    margin-top: 175px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  #studio h2 {
+    line-height: 1;
+    font-size: 2rem;
+  }
 }
 
 .nomination {
@@ -431,6 +480,13 @@
   text-align: left;
   color: #FFF5E9;
 }
+@media all and (max-width: 700px) {
+  .nomination h3 {
+    max-width: 450px;
+    font-size: 20px;
+    line-height: 1;
+  }
+}
 .nomination img {
   margin: -35px;
 }
@@ -440,11 +496,21 @@
   left: 10em;
   top: 4em;
 }
+@media all and (max-width: 700px) {
+  .nomination:before {
+    content: "";
+  }
+}
 .nomination:after {
   content: url(./assets/images/orchid.png);
   position: absolute;
   right: -4em;
   top: -3em;
+}
+@media all and (max-width: 700px) {
+  .nomination:after {
+    content: "";
+  }
 }
 
 .site-footer:before {
@@ -457,6 +523,10 @@
 @media all and (max-width: 700px) {
   .site-footer ul {
     flex-direction: column;
+  }
+  .site-footer ul:after {
+    animation: small-scale-rotation var(--rotation-speed) infinite linear !important;
+    bottom: -23.5em !important;
   }
   .site-footer ul li {
     padding-bottom: 10px;

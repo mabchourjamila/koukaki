@@ -129,7 +129,8 @@ function elementInView(el, dividend = 1) {
 }
 
 function handleCloudAnimation() {
-    if (elementInView(cloud_container, 1.25) && getCloudPosition(cloud_container) < 72) {
+    const limitRight = window.innerWidth > 900 ? 72 : window.innerWidth / 15;
+    if (elementInView(cloud_container, 1.25) && getCloudPosition(cloud_container) < limitRight) {
         document.getElementById('big-cloud').style.left = getCloudPosition(cloud_container) + '%'
         document.getElementById('little-cloud').style.left = getCloudPosition(cloud_container) + '%'
     }

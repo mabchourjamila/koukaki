@@ -9,7 +9,10 @@
     position: relative; /* Ajouter position relative pour le positionnement absolu de la vidéo */
     overflow: hidden;
     
-
+    @media all and (max-width: 900px) {
+        min-height: 406px;
+    }
+    
     .video {
         position: absolute; /* Positionnement absolu pour la vidéo */
         top: 0;

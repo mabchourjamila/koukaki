@@ -14,13 +14,9 @@
   &__article {
     &::before {
       z-index: auto;
-    }
-  }
-
-  &__article {
-    &::before {
       top: 12em;
     }
+
     &::after {
       top: 5em;
     }

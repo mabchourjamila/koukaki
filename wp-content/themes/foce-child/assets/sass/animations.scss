@@ -4,6 +4,12 @@ $rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation p
     --rotation-speed: #{$rotation-speed}; // Convertir la variable SCSS en une variable CSS personnalisée
 }
 
+// refactoriser la rotation dans un mixin
+@mixin rotation-fleurs {
+    animation: rotation var(--rotation-speed) infinite linear;
+    line-height: 0;
+}
+
 /* Animations fleurs */
 
 .story h2::after,
@@ -14,27 +20,28 @@ $rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation p
 .nomination::after,
 .site-footer ul::after,
 .menu-header::before {
-    animation: rotation var(--rotation-speed) infinite linear;
+    @include rotation-fleurs
 }
 
 .menu-nav ul {
 
     li:nth-child(1),
-    li:nth-child(2){
+    li:nth-child(2) {
         :after {
-            animation: rotation 13s infinite linear;
+            @include rotation-fleurs
         }
     }
 
     li:nth-child(3) {
         :before {
-            animation: rotation 13s infinite linear;
+            @include rotation-fleurs
         }
     }
 
     li:nth-child(4) {
         :after {
-            animation: scale-rotation 13s infinite linear;
+            animation: scale-rotation var(--rotation-speed) infinite linear;
+            line-height: 0;
         }
     }
 }
@@ -63,12 +70,24 @@ $rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation p
     }
 }
 
+
+@keyframes small-scale-rotation {
+    from {
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    to {
+        transform: scale(0.5) rotate(359deg);
+    }
+}
+
 /* Animations des sections et titres */
 
 .animation-section,
 .animation-title {
     opacity: 0;
 }
+
 .animation-title-visible {
     animation: animation-title 1s 1s forwards;
 }

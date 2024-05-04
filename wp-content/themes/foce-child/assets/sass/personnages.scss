@@ -6,6 +6,12 @@
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+
+    @media all and (max-width: 500px) {
+        h3 {
+            line-height: 1;
+        }
+    }
 }
 
 .story #characters div {
@@ -14,13 +20,13 @@
 
 .swiper {
     width: 100%;
-}
 
-.swiper figure {
-    max-height: 460px;
-}
+    figure {
+        max-height: 460px;
 
-.swiper figure img {
-    max-height: 400px;
-    width: auto;
+        img {
+            max-height: 400px;
+            width: auto;
+        }
+    }
 }
