@@ -6,40 +6,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: relative; /* Ajouter position relative pour le positionnement absolu de la vidéo */
     overflow: hidden;
-    /* Ajoutez position relative pour le positionnement absolu de la vidéo */
+    
 
     .video {
-        position: absolute;
-        /* Positionnement absolu pour la vidéo */
+        position: absolute; /* Positionnement absolu pour la vidéo */
         top: 0;
         left: 0;
-        width: 100%;
-        /* Largeur de la vidéo pour remplir la largeur de la div */
-        height: 100%;
-        /* Hauteur de la vidéo pour remplir la hauteur de la div */
-        object-fit: cover;
-        /* Ajuster la taille de la vidéo pour couvrir la div */
-    }
-
-    .logo {
-        z-index: 1;
-    }
-
-    .video {
-        width: 100%;
+        width: 100%; /* Largeur de la vidéo pour remplir la largeur de la div */
+        height: 100%; /* Hauteur de la vidéo pour remplir la hauteur de la div */
+        object-fit: cover; /* Ajuster la taille de la vidéo pour couvrir la div */
+        z-index: -1;
         opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
         animation: slidefromtop 2s forwards;
     }
 
     .logo {
-        position: absolute;
+        position: sticky;
         z-index: 1;
         opacity: 0;
+        top: 20px;
+        left: 20px;
         animation: slideup 2s 1s forwards;
     }
 

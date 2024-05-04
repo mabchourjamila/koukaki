@@ -1,8 +1,8 @@
 .menu-header:before {
     content: url(./assets/images/orchid.png);
     position: absolute;
-    left: -4em;
-    top: 4em;
+    left: -4.5em;
+    top: 3em;
 
     @media all and (max-width: 700px) {
         content: '';
@@ -16,7 +16,7 @@
                 content: url(./assets/images/cat1.png);
                 position: absolute;
                 left: 7em;
-                top: 3em;
+                top: 2em;
                 animation: flotter 6s 100ms infinite ease-in-out;
 
                 @media all and (max-width: 700px) {
@@ -28,7 +28,7 @@
                 content: url(./assets/images/Sunflower.png);
                 position: absolute;
                 right: 5em;
-                top: 2em;
+                top: 1.5em;
 
                 @media all and (max-width: 700px) {
                     content: '';
@@ -42,7 +42,7 @@
                 background-image: url(./assets/images/random_flower.png);
                 position: absolute;
                 right: -0.7em;
-                top: 5em;
+                top: 4em;
                 background-size: cover;
                 width: 75px;
                 height: 75px;
@@ -59,7 +59,7 @@
                 background-image: url(./assets/images/flower.png);
                 position: absolute;
                 left: 6em;
-                top: 8em;
+                top: 7em;
                 background-size: cover;
                 width: 75px;
                 height: 75px;
@@ -73,7 +73,7 @@
                 content: url(./assets/images/cat3.png);
                 position: absolute;
                 right: 5em;
-                top: 8em;
+                top: 7em;
                 animation: flotter 7.5s 150ms infinite ease-in-out;
 
                 @media all and (max-width: 700px) {
@@ -88,7 +88,7 @@
                 content: url(./assets/images/cat2.png);
                 position: absolute;
                 left: 2em;
-                top: 13em;
+                top: 10.5em;
                 animation: flotter 7s 200ms infinite ease-in-out;
 
                 @media all and (max-width: 700px) {
@@ -97,14 +97,11 @@
             }
 
             :after {
-                content: '';
-                background-image: url(./assets/images/Hibiscus.png);
+                content:  url(./assets/images/Hibiscus.png);
                 position: absolute;
-                right: -5em;
-                top: 11em;
-                background-size: cover;
-                width: 400px;
-                height: 400px;
+                right: -2.5em;
+                top: 12em;
+                line-height: 0;
 
                 @media all and (max-width: 700px) {
                     background-image: none;
@@ -120,25 +117,25 @@
 
     0%,
     100% {
-        transform: translate3d(5px, 5px, 0);
+        transform: scale(0.8) translate3d(5px, 5px, 0);
     }
 
     10%,
     30%,
     55%,
     85% {
-        transform: translate3d(0, 5px, 0);
+        transform: scale(0.8) translate3d(0, 5px, 0);
     }
 
     20% {
-        transform: translate3d(5px, -4px, 0);
+        transform: scale(0.8) translate3d(5px, -4px, 0);
     }
 
     40% {
-        transform: translate3d(-5px, -5px, 0);
+        transform: scale(0.8) translate3d(-5px, -5px, 0);
     }
 
     70% {
-        transform: translate3d(-6px, 5px, 0);
+        transform: scale(0.8) translate3d(-6px, 5px, 0);
     }
 }

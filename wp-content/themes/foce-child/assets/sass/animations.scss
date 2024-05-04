@@ -20,8 +20,7 @@ $rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation p
 .menu-nav ul {
 
     li:nth-child(1),
-    li:nth-child(2),
-    li:nth-child(4) {
+    li:nth-child(2){
         :after {
             animation: rotation 13s infinite linear;
         }
@@ -30,6 +29,12 @@ $rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation p
     li:nth-child(3) {
         :before {
             animation: rotation 13s infinite linear;
+        }
+    }
+
+    li:nth-child(4) {
+        :after {
+            animation: scale-rotation 13s infinite linear;
         }
     }
 }
@@ -46,32 +51,54 @@ $rotation-speed: 12s; // Définir la variable SCSS pour la vitesse de rotation p
     }
 }
 
-/* Pour l'animatin des titres */
+/* Pour agrandir et faire la rotation des fleurs */
 
-.animation-title-visible {
-    //animation: animation-title slideup 3s 1s forwards;
+@keyframes scale-rotation {
+    from {
+        transform: scale(2) rotate(0deg);
+    }
+
+    to {
+        transform: scale(2) rotate(359deg);
+    }
 }
 
+/* Animations des sections et titres */
+
+.animation-section,
+.animation-title {
+    opacity: 0;
+}
+.animation-title-visible {
+    animation: animation-title 1s 1s forwards;
+}
+
+.animation-section-visible {
+    animation: fadeup-simple 2s both;
+}
+
+/* Pour l'animatin des titres */
 @keyframes animation-title {
     0% {
-        transform: translate3d(-50%, 50%, 0);
+        transform: translateY(-200px);
         opacity: 0;
     }
 
     100% {
-        transform: translate3d(-50%, -50%, 0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
-.animated-section,
-.story__article
-#characters,
-#place
-{
-    opacity: 0;
-    animation: slideup 2s forwards;
-}
-p{
 
-    opacity: 1 !important;
+/* Pour l'animatin des sections */
+@keyframes fadeup-simple {
+    from {
+        transform: translateY(500px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

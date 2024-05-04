@@ -16,7 +16,6 @@
         }
 
         .line {
-            height: 2px;
             margin-block: 6px;
             width: 40px;
         }
@@ -45,7 +44,7 @@
     }
 
     .menu-toggle.active .line:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-9px) rotate(-45deg);
     }
 
 
@@ -82,23 +81,19 @@
 .menu-content {
     text-align: center;
 
-    max-height: 600px;
-    /* Définissez la hauteur maximale pour afficher la barre de défilement */
-    overflow-y: auto;
-    /* Afficher la barre de défilement verticale si nécessaire */
+    height: 600px; /* la hauteur maximale pour afficher la barre de défilement */
 
 
     .menu-header {
         img {
-            margin-top: 20px;
-            height: 110px;
+            margin-top: 1%;
+            height: 95px;
         }
     }
 
     .menu-nav {
         ul {
-            list-style-type: none;
-            /* Supprime les puces de liste */
+            list-style-type: none; /* Supprimer les puces de liste */
             padding: 0;
             margin: 0;
 
@@ -106,9 +101,9 @@
                 font-family: Roboto Mono;
                 font-size: 42px;
                 font-weight: 400;
-                line-height: 85px;
+                line-height: 75px;
                 text-align: center;
-                margin: 20px;
+                margin: 1%;
 
                 a {
                     text-decoration: none;

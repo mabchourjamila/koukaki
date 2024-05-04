@@ -1,16 +1,28 @@
 .story {
-    h2{
-      &::before {
-        z-index: auto;
-        left: -7em;
-      }
-      &::after {
-        left: -6.2em;
-      }
+  h2 {
+    &::before {
+      z-index: auto;
+      left: 0em;
+      top: 1.8em;
     }
-    &__article {
-        &::before {
-          z-index: auto;
-        }
+
+    &::after {
+      line-height: 0;
     }
+  }
+
+  &__article {
+    &::before {
+      z-index: auto;
+    }
+  }
+
+  &__article {
+    &::before {
+      top: 12em;
+    }
+    &::after {
+      top: 5em;
+    }
+  }
 }

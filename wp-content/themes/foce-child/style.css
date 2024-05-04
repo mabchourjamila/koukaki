@@ -15,37 +15,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: relative; /* Ajouter position relative pour le positionnement absolu de la vidéo */
   overflow: hidden;
-  /* Ajoutez position relative pour le positionnement absolu de la vidéo */
 }
 .banner .video {
-  position: absolute;
-  /* Positionnement absolu pour la vidéo */
+  position: absolute; /* Positionnement absolu pour la vidéo */
   top: 0;
   left: 0;
-  width: 100%;
-  /* Largeur de la vidéo pour remplir la largeur de la div */
-  height: 100%;
-  /* Hauteur de la vidéo pour remplir la hauteur de la div */
-  object-fit: cover;
-  /* Ajuster la taille de la vidéo pour couvrir la div */
-}
-.banner .logo {
-  z-index: 1;
-}
-.banner .video {
-  width: 100%;
+  width: 100%; /* Largeur de la vidéo pour remplir la largeur de la div */
+  height: 100%; /* Hauteur de la vidéo pour remplir la hauteur de la div */
+  object-fit: cover; /* Ajuster la taille de la vidéo pour couvrir la div */
+  z-index: -1;
   opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
   animation: slidefromtop 2s forwards;
 }
 .banner .logo {
-  position: absolute;
+  position: sticky;
   z-index: 1;
   opacity: 0;
+  top: 20px;
+  left: 20px;
   animation: slideup 2s 1s forwards;
 }
 
@@ -97,13 +86,20 @@
 
 .story h2::before {
   z-index: auto;
-  left: -7em;
+  left: 0em;
+  top: 1.8em;
 }
 .story h2::after {
-  left: -6.2em;
+  line-height: 0;
 }
 .story__article::before {
   z-index: auto;
+}
+.story__article::before {
+  top: 12em;
+}
+.story__article::after {
+  top: 5em;
 }
 
 .site-header {
@@ -125,7 +121,6 @@
   padding-left: 12%;
 }
 .site-header .main-navigation .line {
-  height: 2px;
   margin-block: 6px;
   width: 40px;
 }
@@ -148,7 +143,7 @@
   opacity: 0;
 }
 .site-header .menu-toggle.active .line:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
 }
 .site-header .menu-content {
   display: none;
@@ -174,18 +169,14 @@
 /* Styles pour centrer le contenu dans la nav */
 .menu-content {
   text-align: center;
-  max-height: 600px;
-  /* Définissez la hauteur maximale pour afficher la barre de défilement */
-  overflow-y: auto;
-  /* Afficher la barre de défilement verticale si nécessaire */
+  height: 600px; /* la hauteur maximale pour afficher la barre de défilement */
 }
 .menu-content .menu-header img {
-  margin-top: 20px;
-  height: 110px;
+  margin-top: 1%;
+  height: 95px;
 }
 .menu-content .menu-nav ul {
-  list-style-type: none;
-  /* Supprime les puces de liste */
+  list-style-type: none; /* Supprimer les puces de liste */
   padding: 0;
   margin: 0;
 }
@@ -193,9 +184,9 @@
   font-family: Roboto Mono;
   font-size: 42px;
   font-weight: 400;
-  line-height: 85px;
+  line-height: 75px;
   text-align: center;
-  margin: 20px;
+  margin: 1%;
 }
 .menu-content .menu-nav ul li a {
   text-decoration: none;
@@ -224,12 +215,14 @@
 }
 
 .menu-nav ul li:nth-child(1) :after,
-.menu-nav ul li:nth-child(2) :after,
-.menu-nav ul li:nth-child(4) :after {
+.menu-nav ul li:nth-child(2) :after {
   animation: rotation 13s infinite linear;
 }
 .menu-nav ul li:nth-child(3) :before {
   animation: rotation 13s infinite linear;
+}
+.menu-nav ul li:nth-child(4) :after {
+  animation: scale-rotation 13s infinite linear;
 }
 
 /* Pour la rotation des fleurs */
@@ -241,33 +234,56 @@
     transform: rotate(359deg);
   }
 }
+/* Pour agrandir et faire la rotation des fleurs */
+@keyframes scale-rotation {
+  from {
+    transform: scale(2) rotate(0deg);
+  }
+  to {
+    transform: scale(2) rotate(359deg);
+  }
+}
+/* Animations des sections et titres */
+.animation-section,
+.animation-title {
+  opacity: 0;
+}
+
+.animation-title-visible {
+  animation: animation-title 1s 1s forwards;
+}
+
+.animation-section-visible {
+  animation: fadeup-simple 2s both;
+}
+
 /* Pour l'animatin des titres */
 @keyframes animation-title {
   0% {
-    transform: translate3d(-50%, 50%, 0);
+    transform: translateY(-200px);
     opacity: 0;
   }
   100% {
-    transform: translate3d(-50%, -50%, 0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
-.animated-section,
-.story__article #characters,
-#place {
-  opacity: 0;
-  animation: slideup 2s forwards;
+/* Pour l'animatin des sections */
+@keyframes fadeup-simple {
+  from {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-
-p {
-  opacity: 1 !important;
-}
-
 .menu-header:before {
   content: url(./assets/images/orchid.png);
   position: absolute;
-  left: -4em;
-  top: 4em;
+  left: -4.5em;
+  top: 3em;
 }
 @media all and (max-width: 700px) {
   .menu-header:before {
@@ -279,7 +295,7 @@ p {
   content: url(./assets/images/cat1.png);
   position: absolute;
   left: 7em;
-  top: 3em;
+  top: 2em;
   animation: flotter 6s 100ms infinite ease-in-out;
 }
 @media all and (max-width: 700px) {
@@ -291,7 +307,7 @@ p {
   content: url(./assets/images/Sunflower.png);
   position: absolute;
   right: 5em;
-  top: 2em;
+  top: 1.5em;
 }
 @media all and (max-width: 700px) {
   .menu-nav ul li:nth-child(1) :after {
@@ -303,7 +319,7 @@ p {
   background-image: url(./assets/images/random_flower.png);
   position: absolute;
   right: -0.7em;
-  top: 5em;
+  top: 4em;
   background-size: cover;
   width: 75px;
   height: 75px;
@@ -318,7 +334,7 @@ p {
   background-image: url(./assets/images/flower.png);
   position: absolute;
   left: 6em;
-  top: 8em;
+  top: 7em;
   background-size: cover;
   width: 75px;
   height: 75px;
@@ -332,7 +348,7 @@ p {
   content: url(./assets/images/cat3.png);
   position: absolute;
   right: 5em;
-  top: 8em;
+  top: 7em;
   animation: flotter 7.5s 150ms infinite ease-in-out;
 }
 @media all and (max-width: 700px) {
@@ -344,7 +360,7 @@ p {
   content: url(./assets/images/cat2.png);
   position: absolute;
   left: 2em;
-  top: 13em;
+  top: 10.5em;
   animation: flotter 7s 200ms infinite ease-in-out;
 }
 @media all and (max-width: 700px) {
@@ -353,14 +369,11 @@ p {
   }
 }
 .menu-nav ul li:nth-child(4) :after {
-  content: "";
-  background-image: url(./assets/images/Hibiscus.png);
+  content: url(./assets/images/Hibiscus.png);
   position: absolute;
-  right: -5em;
-  top: 11em;
-  background-size: cover;
-  width: 400px;
-  height: 400px;
+  right: -2.5em;
+  top: 12em;
+  line-height: 0;
 }
 @media all and (max-width: 700px) {
   .menu-nav ul li:nth-child(4) :after {
@@ -371,19 +384,19 @@ p {
 /* Pour flotter les chats */
 @keyframes flotter {
   0%, 100% {
-    transform: translate3d(5px, 5px, 0);
+    transform: scale(0.8) translate3d(5px, 5px, 0);
   }
   10%, 30%, 55%, 85% {
-    transform: translate3d(0, 5px, 0);
+    transform: scale(0.8) translate3d(0, 5px, 0);
   }
   20% {
-    transform: translate3d(5px, -4px, 0);
+    transform: scale(0.8) translate3d(5px, -4px, 0);
   }
   40% {
-    transform: translate3d(-5px, -5px, 0);
+    transform: scale(0.8) translate3d(-5px, -5px, 0);
   }
   70% {
-    transform: translate3d(-6px, 5px, 0);
+    transform: scale(0.8) translate3d(-6px, 5px, 0);
   }
 }
 .story #place {
