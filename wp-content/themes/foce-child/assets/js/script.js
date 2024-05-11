@@ -96,6 +96,16 @@ document.addEventListener('readystatechange', function (event) {
 // slider : SwiperJs 
 function initSwiperJS() {
     var swiper = new Swiper('.swiper', {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        },
         slidesPerView: 3,
         spaceBetween: 30,
         speed: 1000,

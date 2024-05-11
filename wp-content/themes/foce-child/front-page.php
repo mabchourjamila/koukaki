@@ -4,6 +4,7 @@ get_header();
 ?>
 <main id="primary" class="site-main">
     <section class="banner">
+        <img class="banner-bg" src="<?php echo get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="Banniere Fleurs d'oranger & chats errants">
         <video class="video" autoplay muted loop>
             <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/StudioKoukaki-videoheadersansson.mp4'; ?>" type="video/mp4">
             Votre navigateur ne prend pas en charge les vidéos HTML5.
@@ -15,48 +16,9 @@ get_header();
         <article class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
-        <?php
-        $args = array(
-            'post_type' => 'characters',
-            'posts_per_page' => -1,
-            'meta_key'  => '_main_char_field',
-            'orderby'   => 'meta_value_num',
 
-        );
-        $characters_query = new WP_Query($args);
-        ?>
-        <article id="characters" class="animated-section">
-            <div class="main-character">
-                <h3><span class="animation-title">Les personnages</span></h3>
-            </div>
-            <!-- Slider main container -->
-            <div class="swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <?php
-                    while ($characters_query->have_posts()) {
-                        $characters_query->the_post();
-                        echo '<div class="swiper-slide"><figure>';
-                        echo get_the_post_thumbnail(get_the_ID(), 'full');
-                        echo '<figcaption>';
-                        the_title();
-                        echo '</figcaption>';
-                        echo '</figure></div>';
-                    }
-                    ?>
-                </div>
-                <!-- If we need pagination -->
-                <!--<div class="swiper-pagination"></div>-->
+        <?php get_template_part( 'template-parts/les-personnages' ); ?>
 
-                <!-- If we need navigation buttons -->
-                <!--<div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>-->
-
-                <!-- If we need scrollbar -->
-                <!--<div class="swiper-scrollbar"></div>-->
-            </div>
-        </article>
         <article id="place" class="animated-section">
             <img id="big-cloud" class="cloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big-cloud.png'; ?>" alt="Grand nuage">
             <img id="little-cloud" class="cloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little-cloud.png'; ?>" alt="Petit nuage">

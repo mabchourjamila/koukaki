@@ -23,6 +23,15 @@
     min-height: 406px;
   }
 }
+.banner .banner-bg {
+  position: absolute;
+  width: 100%; /* Largeur de la vidéo pour remplir la largeur de la div */
+  height: 100%; /* Hauteur de la vidéo pour remplir la hauteur de la div */
+  object-fit: cover; /* Ajuster la taille de la vidéo pour couvrir la div */
+  z-index: -1;
+  opacity: 0;
+  animation: slidefromtop 2s forwards;
+}
 .banner .video {
   position: absolute; /* Positionnement absolu pour la vidéo */
   top: 0;
@@ -30,7 +39,7 @@
   width: 100%; /* Largeur de la vidéo pour remplir la largeur de la div */
   height: 100%; /* Hauteur de la vidéo pour remplir la hauteur de la div */
   object-fit: cover; /* Ajuster la taille de la vidéo pour couvrir la div */
-  z-index: -1;
+  z-index: 0;
   opacity: 0;
   animation: slidefromtop 2s forwards;
 }
@@ -40,7 +49,7 @@
   opacity: 0;
   top: 20px;
   left: 20px;
-  animation: slideup 2s 1s forwards;
+  animation: slideup 2s 1s forwards, flotter 5s 2.1s infinite ease-in-out;
 }
 
 @keyframes slidefromtop {
